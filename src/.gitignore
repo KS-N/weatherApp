@@ -1,0 +1,55 @@
+# dependencies
+/node_modules
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# compiled output
+/dist
+/dist-server
+/tmp
+/out-tsc
+/build
+
+# IDEs and editors
+
+/.idea
+
+.project
+
+.classpath
+
+.c9/
+
+*.launch
+
+.settings/
+
+*.sublime-workspace
+
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# e2e
+
+/e2e/*.js
+
+/e2e/*.map
+
+# System Files
+
+.DS_Store
+
+Thumbs.db

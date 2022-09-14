@@ -1,0 +1,49 @@
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <input
+      class="form-control me-2"
+      type="text"
+      placeholder="Search City"
+      [(ngModel)]="filterText"
+    />
+  </div>
+</nav>
+
+<div class="row">
+  <div class="col-12" style="display: contents">
+    <div
+      *ngFor="let weather of currentWeather | appFilter: filterText"
+      class="card mb-3"
+      style="width: 25rem; height: 40rem"
+    >
+      <div class="card-body">
+        <div class="row row-1">
+          <h6 class="card-subtitle">
+            <h4>{{ weather.weatherInfo.sys.country }}</h4>
+            {{ weather.weatherInfo.name }}
+          </h6>
+        </div>
+
+        <div class="row row-2">
+          <div *ngIf="weather.weatherInfo.main.temp > 15">
+            <img src="/assets/sunny.png" class="card-img" alt="sunny" />
+          </div>
+          <div *ngIf="weather.weatherInfo.main.temp < 15">
+            <img src="/assets/cloudy.png" class="card-img" alt="cloudy" />
+          </div>
+          <h2>{{ weather.weatherInfo.main.temp }}<span>&#176;</span></h2>
+        </div>
+
+        <div class="row row-3">
+          <p>
+            Latitude: {{ weather.weatherInfo.coord.lat }} <br />
+            Longitude:
+            {{ weather.weatherInfo.coord.lon }}
+            <br />
+            Humidity: {{ weather.weatherInfo.main.humidity }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
